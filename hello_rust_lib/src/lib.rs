@@ -1,4 +1,10 @@
-pub fn add(left: u64, right: u64) -> u64 {
+#[no_mangle]
+pub extern "C" fn Java_com_curtesmalteser_hellorust_MainActivity_add(
+    _env: *mut std::ffi::c_void,
+    _class: *mut std::ffi::c_void,
+    left: i64,
+    right: i64,
+) -> i64 {
     left + right
 }
 
