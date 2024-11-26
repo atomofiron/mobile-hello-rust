@@ -14,14 +14,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.curtesmalteser.hellorust.ui.theme.HelloRustTheme
 
 class MainActivity : ComponentActivity() {
+
     external fun add(left: Long, right: Long): Long
-
-    companion object {
-        init {
-            System.loadLibrary("hello_rust_lib")
-        }
-    }
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
