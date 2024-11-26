@@ -59,3 +59,37 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 }
 
+tasks.register<Exec>("buildRust") {
+    group = "rust"
+    val cargoPath = "${System.getProperty("user.home")}/.cargo/bin/cargo"
+    workingDir("$projectDir/../hello_rust_lib")
+    commandLine(
+        cargoPath, "ndk",
+        "-t", "arm64-v8a",
+        "-t", "armeabi-v7a",
+        "-t", "x86",
+        "-t", "x86_64",
+        "-o", "$projectDir/../hello_rust_lib/jniLibs",
+        "build", "--release"
+    )
+}
+
+tasks.register<Copy>("copyRustLibs") {
+    group = "rust"
+    dependsOn("buildRust")
+
+    from("$projectDir/../hello_rust_lib/jniLibs")
+
+    into("$projectDir/src/main/jniLibs")
+
+    include("**/*.so")
+}
+
+tasks.named("preBuild") {
+    dependsOn("copyRustLibs")
+}
+
+tasks.named("preBuild") {
+    dependsOn("clean")
+}
+
