@@ -5,6 +5,11 @@ pub extern "C" fn Java_com_curtesmalteser_hellorust_MainActivity_add(
     left: i64,
     right: i64,
 ) -> i64 {
+    add(left, right)
+}
+
+#[inline]
+fn add(left: i64, right: i64) -> i64 {
     left + right
 }
 

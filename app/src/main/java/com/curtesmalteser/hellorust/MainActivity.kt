@@ -25,7 +25,7 @@ class MainActivity : ComponentActivity() {
             HelloRustTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
-                        name = "Android from Rust: $sumFromRust",
+                        name = "Android sum from Rust: $sumFromRust",
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
