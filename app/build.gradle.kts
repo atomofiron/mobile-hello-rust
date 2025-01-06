@@ -77,11 +77,8 @@ tasks.register<Exec>("buildRust") {
 tasks.register<Copy>("copyRustLibs") {
     group = "rust"
     dependsOn("buildRust")
-
     from("$projectDir/../hello_rust_lib/jniLibs")
-
     into("$projectDir/src/main/jniLibs")
-
     include("**/*.so")
 }
 
