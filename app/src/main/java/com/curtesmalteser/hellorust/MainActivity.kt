@@ -18,11 +18,14 @@ class MainActivity : ComponentActivity() {
 
     private external fun add(left: Long, right: Long): Long
     private external fun subtract(left: Long, right: Long): Long
+    private external fun reverseGreet(name: String): String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val sumFromRust = add(left = 2, right = 3)
         val subtractFromRust = subtract(left = 2, right = 3)
+        val reversedGreet = reverseGreet("dlrow")
+
         enableEdgeToEdge()
         setContent {
             HelloRustTheme {
@@ -34,6 +37,10 @@ class MainActivity : ComponentActivity() {
                         )
                         Greeting(
                             name = "Android subtract from Rust: $subtractFromRust",
+                            modifier = Modifier.padding(innerPadding)
+                        )
+                        Greeting(
+                            name = "Android reverses greet in Rust: $reversedGreet",
                             modifier = Modifier.padding(innerPadding)
                         )
                     }
