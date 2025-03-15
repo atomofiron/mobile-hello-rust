@@ -24,9 +24,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B74B63D82D85D096005E1D87 /* hello_rust_lib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hello_rust_lib.h; sourceTree = "<group>"; };
 		B7D71F7F2D8563DD00E33984 /* Hello Rust.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hello Rust.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7D71F8F2D8563E000E33984 /* Hello RustTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hello RustTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7D71F992D8563E000E33984 /* Hello RustUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hello RustUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7DE8C582D85D069005AEBD0 /* Hello Rust-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hello Rust-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -72,9 +74,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B7C4B70D2D85CD0800705DD8 /* Rust Bridge */ = {
+			isa = PBXGroup;
+			children = (
+				B74B63D82D85D096005E1D87 /* hello_rust_lib.h */,
+				B7DE8C582D85D069005AEBD0 /* Hello Rust-Bridging-Header.h */,
+			);
+			path = "Rust Bridge";
+			sourceTree = "<group>";
+		};
 		B7D71F762D8563DD00E33984 = {
 			isa = PBXGroup;
 			children = (
+				B7C4B70D2D85CD0800705DD8 /* Rust Bridge */,
 				B7D71F812D8563DD00E33984 /* Hello Rust */,
 				B7D71F922D8563E000E33984 /* Hello RustTests */,
 				B7D71F9C2D8563E000E33984 /* Hello RustUITests */,
@@ -175,6 +187,7 @@
 				TargetAttributes = {
 					B7D71F7E2D8563DD00E33984 = {
 						CreatedOnToolsVersion = 16.1;
+						LastSwiftMigration = 1610;
 					};
 					B7D71F8E2D8563E000E33984 = {
 						CreatedOnToolsVersion = 16.1;
@@ -393,6 +406,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Hello Rust/Preview Content\"";
@@ -411,6 +425,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.curtesmalteser.hellorust;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Rust Bridge/Hello Rust-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -421,6 +437,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Hello Rust/Preview Content\"";
@@ -439,6 +456,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.curtesmalteser.hellorust;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Rust Bridge/Hello Rust-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
