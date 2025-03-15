@@ -1,4 +1,4 @@
-use crate::functions::{add::add, subtract::subtract};
+use crate::functions::{add::add, subtract::subtract, string::reverse_greet};
 use jni::JNIEnv;
 use jni::objects::{JClass, JString};
 use jni::sys::jstring;
@@ -36,7 +36,7 @@ pub extern "system" fn Java_com_curtesmalteser_hellorust_MainActivity_reverseGre
         .into();
 
     // Call the Rust function to process the string
-    let reversed_greeting: String = crate::functions::string::reverse_greet(&rust_string);  
+    let reversed_greeting: String = reverse_greet(&rust_string);  
 
     // Convert the Rust String back to a Java String (jstring)
     let output = env.new_string( reversed_greeting).expect("Couldn't create java string!");
