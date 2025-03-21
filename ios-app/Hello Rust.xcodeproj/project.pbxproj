@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		B7BC933B2D8E1182005DAB0C /* hello_rust_lib.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7BC933A2D8E1182005DAB0C /* hello_rust_lib.xcframework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		B7D71F902D8563E000E33984 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -25,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		B74B63D82D85D096005E1D87 /* hello_rust_lib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hello_rust_lib.h; sourceTree = "<group>"; };
+		B7BC933A2D8E1182005DAB0C /* hello_rust_lib.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = hello_rust_lib.xcframework; sourceTree = "<group>"; };
 		B7D71F7F2D8563DD00E33984 /* Hello Rust.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hello Rust.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7D71F8F2D8563E000E33984 /* Hello RustTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hello RustTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7D71F992D8563E000E33984 /* Hello RustUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hello RustUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7BC933B2D8E1182005DAB0C /* hello_rust_lib.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +92,7 @@
 		B7D71F762D8563DD00E33984 = {
 			isa = PBXGroup;
 			children = (
+				B7BC933A2D8E1182005DAB0C /* hello_rust_lib.xcframework */,
 				B7C4B70D2D85CD0800705DD8 /* Rust Bridge */,
 				B7D71F812D8563DD00E33984 /* Hello Rust */,
 				B7D71F922D8563E000E33984 /* Hello RustTests */,
