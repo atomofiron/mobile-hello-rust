@@ -28,7 +28,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B74B63D82D85D096005E1D87 /* hello_rust_lib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hello_rust_lib.h; sourceTree = "<group>"; };
 		B7BC933A2D8E1182005DAB0C /* hello_rust_lib.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = hello_rust_lib.xcframework; sourceTree = "<group>"; };
 		B7D71F7F2D8563DD00E33984 /* Hello Rust.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hello Rust.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7D71F8F2D8563E000E33984 /* Hello RustTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hello RustTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,7 +82,6 @@
 		B7C4B70D2D85CD0800705DD8 /* Rust Bridge */ = {
 			isa = PBXGroup;
 			children = (
-				B74B63D82D85D096005E1D87 /* hello_rust_lib.h */,
 				B7DE8C582D85D069005AEBD0 /* Hello Rust-Bridging-Header.h */,
 			);
 			path = "Rust Bridge";
