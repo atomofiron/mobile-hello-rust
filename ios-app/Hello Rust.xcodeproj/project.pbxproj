@@ -269,7 +269,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/Zsh;
-			shellScript = "#!/bin/zsh\nset -e\n\necho \"🦀 Generating C header for iOS...\"\n\nRUST_PROJ=\"${SRCROOT}/../hello_rust_lib\"\nHEADER_OUT=\"${PROJECT_DIR}/Bridge Rust\"\n\nexport PATH=\"$HOME/.cargo/bin:$PATH\"\n\ncd \"$RUST_PROJ\"\ncbindgen -l C -o target/hello_rust_lib.h\ncp -- target/hello_rust_lib.h \"${PROJECT_DIR}/Rust Bridge/hello_rust_lib.h\"\n\necho \"✅ Header generated at: $HEADER_OUT\"\n";
+			shellScript = "#!/bin/zsh\nset -e\n\necho \"🦀 Generating C header for iOS...\"\n\nRUST_PROJ=\"${SRCROOT}/../hello_rust_lib\"\nHEADER_OUT=\"${PROJECT_DIR}/Bridge Rust\"\n\nexport PATH=\"$HOME/.cargo/bin:$PATH\"\n\ncd \"$RUST_PROJ\"\ncbindgen -l C -o target/hello_rust_lib.h\ncp -- target/hello_rust_lib.h \"${PROJECT_DIR}/Rust Bridge/hello_rust_lib.h\"\n\necho \"✅ Header generated at: $HEADER_OUT\"\n\ncargo build --target aarch64-apple-ios --release\ncargo build --target x86_64-apple-ios --release\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
