@@ -16,6 +16,7 @@ hello_rust_lib/debug/
 hello_rust_lib/target/
 hello_rust_lib/Cargo.lock
 hello_rust_lib/*.rs.bk
+hello_rust_lib/.cargo/
 
 # MSVC Windows builds of rustc generate these, which store debugging information
 hello_rust_lib/*.pdb
