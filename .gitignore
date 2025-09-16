@@ -10,6 +10,7 @@ android-app/build/
 android-app/captures/
 android-app/.externalNativeBuild/
 android-app/.cxx/
+android-app/app/src/main/jniLibs/
 
 # Rust (hello-rust-lib)
 hello_rust_lib/debug/
