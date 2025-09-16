@@ -1,3 +1,6 @@
+import org.gradle.internal.os.OperatingSystem
+import java.io.File
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -6,14 +9,15 @@ plugins {
 
 android {
     namespace = "com.curtesmalteser.hellorust"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.curtesmalteser.hellorust"
         minSdk = 28
-        targetSdk = 35
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
+        ndkVersion = "28.2.13676358"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -59,31 +63,31 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 }
 
+// cargo install cargo-ndk
+
+val ndkApi = android.defaultConfig.minSdk
+val rustLibPath = "$projectDir/../../hello_rust_lib"
+
 tasks.register<Exec>("buildRust") {
     group = "rust"
     val cargoPath = "${System.getProperty("user.home")}/.cargo/bin/cargo"
-    workingDir("$projectDir/../../hello_rust_lib")
+    workingDir(rustLibPath)
     commandLine(
         cargoPath, "ndk",
         "-t", "arm64-v8a",
         "-t", "armeabi-v7a",
         "-t", "x86",
         "-t", "x86_64",
-        "-o", "$projectDir/../../hello_rust_lib/jniLibs",
+        "-P", "$ndkApi",
+        "-o", "$projectDir/src/main/jniLibs",
         "build", "--release"
-    )
-}
-
-tasks.register<Copy>("copyRustLibs") {
-    group = "rust"
-    dependsOn("buildRust")
-    from("$projectDir/../../hello_rust_lib/jniLibs")
-    into("$projectDir/src/main/jniLibs")
-    include("**/*.so")
+    ).apply {
+        println("run if fails: cd $rustLibPath && ${commandLine.joinToString(separator = " ")}\n")
+    }
 }
 
 tasks.named("preBuild") {
-    dependsOn("copyRustLibs")
+    dependsOn("buildRust")
 }
 
 tasks.named("preBuild") {
